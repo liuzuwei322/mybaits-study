@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wge.mapper.UserMapper">
+    <!--  参数如果填写的map，那么在取值的时候，就要和map中的key一一对应  -->
+    <!--  参数如果是普通类型时，在取值的时候，可以随便填写，但为了规范，还是要与数据库的字段保持一致  -->
+    <select id="selectUser" resultType="User" parameterType="map">
+        select uid, age, name, pwd as password from user where uid = #{id}
+    </select>
+</mapper>
